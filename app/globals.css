@@ -4,75 +4,75 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color palette to soft cyan and pink theme for modern portfolio */
-  --background: oklch(0.98 0.01 195); /* Soft cyan background #ecfeff */
-  --foreground: oklch(0.35 0.02 225); /* Dark slate text #475569 */
+  /* Updated color palette to use #959E6F (olive green) and #483D69 (dark purple) */
+  --background: oklch(0.98 0.01 80); /* Light olive background */
+  --foreground: oklch(0.25 0.05 280); /* Dark purple text #483D69 */
   --card: oklch(1 0 0); /* Pure white cards */
-  --card-foreground: oklch(0.35 0.02 225); /* Dark slate text on cards */
+  --card-foreground: oklch(0.25 0.05 280); /* Dark purple text on cards */
   --popover: oklch(1 0 0); /* White popover */
-  --popover-foreground: oklch(0.35 0.02 225); /* Dark slate popover text */
-  --primary: oklch(0.35 0.08 200); /* Cyan primary #164e63 */
+  --popover-foreground: oklch(0.25 0.05 280); /* Dark purple popover text */
+  --primary: oklch(0.6 0.08 80); /* Olive green primary #959E6F */
   --primary-foreground: oklch(1 0 0); /* White text on primary */
-  --secondary: oklch(0.65 0.2 340); /* Pink accent #ec4899 */
+  --secondary: oklch(0.25 0.05 280); /* Dark purple secondary #483D69 */
   --secondary-foreground: oklch(1 0 0); /* White text on secondary */
-  --muted: oklch(0.98 0.01 320); /* Soft pink muted #fdf2f8 */
-  --muted-foreground: oklch(0.35 0.02 225); /* Dark slate muted text */
-  --accent: oklch(0.65 0.2 340); /* Pink accent */
+  --muted: oklch(0.95 0.02 80); /* Light olive muted */
+  --muted-foreground: oklch(0.25 0.05 280); /* Dark purple muted text */
+  --accent: oklch(0.6 0.08 80); /* Olive green accent */
   --accent-foreground: oklch(1 0 0); /* White text on accent */
   --destructive: oklch(0.5 0.2 15); /* Red destructive */
   --destructive-foreground: oklch(1 0 0); /* White text on destructive */
-  --border: oklch(0.9 0.01 225); /* Light border #e5e7eb */
+  --border: oklch(0.9 0.01 80); /* Light olive border */
   --input: oklch(1 0 0); /* White input background */
-  --ring: oklch(0.35 0.08 200 / 0.5); /* Cyan ring with opacity */
-  --chart-1: oklch(0.6 0.15 25); /* Orange chart color */
-  --chart-2: oklch(0.65 0.2 340); /* Pink chart color */
-  --chart-3: oklch(0.35 0.08 200); /* Cyan chart color */
-  --chart-4: oklch(0.35 0.02 225); /* Slate chart color */
-  --chart-5: oklch(0.98 0.01 320); /* Soft pink chart color */
+  --ring: oklch(0.6 0.08 80 / 0.5); /* Olive green ring with opacity */
+  --chart-1: oklch(0.6 0.08 80); /* Olive green chart color */
+  --chart-2: oklch(0.25 0.05 280); /* Dark purple chart color */
+  --chart-3: oklch(0.4 0.06 280); /* Medium purple chart color */
+  --chart-4: oklch(0.7 0.06 80); /* Light olive chart color */
+  --chart-5: oklch(0.5 0.07 80); /* Medium olive chart color */
   --radius: 0.5rem;
   --sidebar: oklch(1 0 0);
-  --sidebar-foreground: oklch(0.35 0.02 225);
-  --sidebar-primary: oklch(0.35 0.08 200);
+  --sidebar-foreground: oklch(0.25 0.05 280);
+  --sidebar-primary: oklch(0.6 0.08 80);
   --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.65 0.2 340);
+  --sidebar-accent: oklch(0.25 0.05 280);
   --sidebar-accent-foreground: oklch(1 0 0);
-  --sidebar-border: oklch(0.9 0.01 225);
-  --sidebar-ring: oklch(0.35 0.08 200 / 0.5);
+  --sidebar-border: oklch(0.9 0.01 80);
+  --sidebar-ring: oklch(0.6 0.08 80 / 0.5);
 }
 
 .dark {
-  --background: oklch(0.1 0.01 225);
-  --foreground: oklch(0.98 0.01 195);
-  --card: oklch(0.15 0.01 225);
-  --card-foreground: oklch(0.98 0.01 195);
-  --popover: oklch(0.15 0.01 225);
-  --popover-foreground: oklch(0.98 0.01 195);
-  --primary: oklch(0.7 0.15 195);
-  --primary-foreground: oklch(0.1 0.01 225);
-  --secondary: oklch(0.25 0.02 225);
-  --secondary-foreground: oklch(0.98 0.01 195);
-  --muted: oklch(0.25 0.02 225);
-  --muted-foreground: oklch(0.7 0.01 225);
-  --accent: oklch(0.7 0.2 340);
-  --accent-foreground: oklch(0.1 0.01 225);
+  --background: oklch(0.1 0.02 280);
+  --foreground: oklch(0.95 0.02 80);
+  --card: oklch(0.15 0.02 280);
+  --card-foreground: oklch(0.95 0.02 80);
+  --popover: oklch(0.15 0.02 280);
+  --popover-foreground: oklch(0.95 0.02 80);
+  --primary: oklch(0.7 0.08 80);
+  --primary-foreground: oklch(0.1 0.02 280);
+  --secondary: oklch(0.3 0.05 280);
+  --secondary-foreground: oklch(0.95 0.02 80);
+  --muted: oklch(0.25 0.02 280);
+  --muted-foreground: oklch(0.7 0.02 80);
+  --accent: oklch(0.7 0.08 80);
+  --accent-foreground: oklch(0.1 0.02 280);
   --destructive: oklch(0.4 0.15 15);
   --destructive-foreground: oklch(0.65 0.25 15);
-  --border: oklch(0.25 0.02 225);
-  --input: oklch(0.25 0.02 225);
-  --ring: oklch(0.45 0.05 225);
-  --chart-1: oklch(0.5 0.25 265);
-  --chart-2: oklch(0.7 0.17 160);
-  --chart-3: oklch(0.77 0.19 70);
-  --chart-4: oklch(0.63 0.27 305);
-  --chart-5: oklch(0.65 0.25 15);
-  --sidebar: oklch(0.15 0.01 225);
-  --sidebar-foreground: oklch(0.98 0.01 195);
-  --sidebar-primary: oklch(0.5 0.25 265);
-  --sidebar-primary-foreground: oklch(0.98 0.01 195);
-  --sidebar-accent: oklch(0.25 0.02 225);
-  --sidebar-accent-foreground: oklch(0.98 0.01 195);
-  --sidebar-border: oklch(0.25 0.02 225);
-  --sidebar-ring: oklch(0.45 0.05 225);
+  --border: oklch(0.25 0.02 280);
+  --input: oklch(0.25 0.02 280);
+  --ring: oklch(0.45 0.05 280);
+  --chart-1: oklch(0.7 0.08 80);
+  --chart-2: oklch(0.4 0.05 280);
+  --chart-3: oklch(0.5 0.06 280);
+  --chart-4: oklch(0.8 0.06 80);
+  --chart-5: oklch(0.6 0.07 80);
+  --sidebar: oklch(0.15 0.02 280);
+  --sidebar-foreground: oklch(0.95 0.02 80);
+  --sidebar-primary: oklch(0.7 0.08 80);
+  --sidebar-primary-foreground: oklch(0.95 0.02 80);
+  --sidebar-accent: oklch(0.25 0.02 280);
+  --sidebar-accent-foreground: oklch(0.95 0.02 80);
+  --sidebar-border: oklch(0.25 0.02 280);
+  --sidebar-ring: oklch(0.45 0.05 280);
 }
 
 @theme inline {
@@ -139,10 +139,10 @@
 @keyframes pulse-glow {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(22, 78, 99, 0.3);
+    box-shadow: 0 0 20px rgba(149, 158, 111, 0.3);
   }
   50% {
-    box-shadow: 0 0 40px rgba(22, 78, 99, 0.6);
+    box-shadow: 0 0 40px rgba(149, 158, 111, 0.6);
   }
 }
 
@@ -167,7 +167,8 @@
 }
 
 .gradient-shift {
-  background: linear-gradient(-45deg, #ecfeff, #ffffff, #fdf2f8, #ecfeff);
+  /* Updated gradient to use olive green and purple tones */
+  background: linear-gradient(-45deg, #f5f6f2, #ffffff, #f0f0f5, #f5f6f2);
   background-size: 400% 400%;
   animation: gradient-shift 8s ease infinite;
 }

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhatiar Azhari - Network Engineer</title>
+    <meta name="description" content="Portfolio of Bhatiar Azhari, Network Engineer based in Depok, Indonesia">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(-45deg, #ecfeff, #ffffff, #fdf2f8, #ecfeff);
+            background-size: 400% 400%;
+            animation: gradient-shift 8s ease infinite;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            position: relative;
+        }
+
+        /* Animated background elements */
+        .bg-element {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            pointer-events: none;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .bg-element-1 {
+            top: 5rem;
+            left: 5rem;
+            width: 8rem;
+            height: 8rem;
+            background: rgba(22, 78, 99, 0.1);
+            animation-delay: 0s;
+        }
+
+        .bg-element-2 {
+            top: 10rem;
+            right: 8rem;
+            width: 6rem;
+            height: 6rem;
+            background: rgba(236, 72, 153, 0.1);
+            animation-delay: 2s;
+        }
+
+        .bg-element-3 {
+            bottom: 8rem;
+            left: 25%;
+            width: 10rem;
+            height: 10rem;
+            background: rgba(236, 72, 153, 0.1);
+            animation-delay: 4s;
+        }
+
+        .bg-element-4 {
+            bottom: 5rem;
+            right: 5rem;
+            width: 7rem;
+            height: 7rem;
+            background: rgba(22, 78, 99, 0.1);
+            animation-delay: 1s;
+        }
+
+        .main-content {
+            position: relative;
+            z-index: 10;
+            max-width: 64rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(2rem);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .location-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #475569;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        .location-icon {
+            width: 1rem;
+            height: 1rem;
+            margin-right: 0.5rem;
+        }
+
+        .main-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #164e63, #ec4899, #164e63);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-text 3s ease infinite, fadeInUp 1.2s ease forwards;
+            animation-delay: 0.2s;
+            opacity: 0;
+            transform: translateY(2rem);
+        }
+
+        .subtitle-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(2rem);
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.4s;
+        }
+
+        .network-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.75rem;
+            color: #164e63;
+        }
+
+        .subtitle {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .tagline {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: #64748b;
+            max-width: 32rem;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(2rem);
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            transform: translateY(2rem);
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.8s;
+        }
+
+        .skill-badge {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(22, 78, 99, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            color: #475569;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill-badge:hover {
+            background: #164e63;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .cta-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            opacity: 0;
+            transform: translateY(2rem);
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 1s;
+        }
+
+        .primary-btn {
+            background: #164e63;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse-glow 3s ease infinite;
+        }
+
+        .primary-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(22, 78, 99, 0.3);
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .social-btn {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(22, 78, 99, 0.2);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-btn:hover {
+            background: #164e63;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .social-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        /* Floating decorative elements */
+        .floating-dot {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .dot-1 {
+            top: -2.5rem;
+            left: -2.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: #164e63;
+            animation-delay: 0.5s;
+        }
+
+        .dot-2 {
+            top: 25%;
+            right: -2rem;
+            width: 0.75rem;
+            height: 0.75rem;
+            background: #ec4899;
+            animation-delay: 1.5s;
+        }
+
+        .dot-3 {
+            bottom: -2rem;
+            left: 33%;
+            width: 1.25rem;
+            height: 1.25rem;
+            background: #ec4899;
+            animation-delay: 2.5s;
+        }
+
+        .dot-4 {
+            bottom: 25%;
+            left: -1.5rem;
+            width: 0.5rem;
+            height: 0.5rem;
+            background: #164e63;
+            animation-delay: 3.5s;
+        }
+
+        /* Animations */
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(22, 78, 99, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(22, 78, 99, 0.6); }
+        }
+
+        @keyframes gradient-text {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* Responsive design */
+        @media (min-width: 640px) {
+            .cta-container {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Animated background elements -->
+        <div class="bg-element bg-element-1"></div>
+        <div class="bg-element bg-element-2"></div>
+        <div class="bg-element bg-element-3"></div>
+        <div class="bg-element bg-element-4"></div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <!-- Location badge -->
+            <div class="location-badge">
+                <svg class="location-icon" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                Depok, Indonesia
+            </div>
+
+            <!-- Name -->
+            <h1 class="main-title">Bhatiar Azhari</h1>
+
+            <!-- Title -->
+            <div class="subtitle-container">
+                <svg class="network-icon" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                <h2 class="subtitle">Network Engineer</h2>
+            </div>
+
+            <!-- Tagline -->
+            <p class="tagline">
+                Connecting networks, building bridges. Passionate about creating robust, scalable network infrastructures that power the digital world.
+            </p>
+
+            <!-- Skills -->
+            <div class="skills-container">
+                <span class="skill-badge">Network Security</span>
+                <span class="skill-badge">Cisco</span>
+                <span class="skill-badge">Cloud Infrastructure</span>
+                <span class="skill-badge">Network Automation</span>
+                <span class="skill-badge">CCNA</span>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="cta-container">
+                <button class="primary-btn">Explore My Work</button>
+                
+                <div class="social-buttons">
+                    <button class="social-btn">
+                        <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </button>
+                    <button class="social-btn">
+                        <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </button>
+                    <button class="social-btn">
+                        <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Floating decorative dots -->
+            <div class="floating-dot dot-1"></div>
+            <div class="floating-dot dot-2"></div>
+            <div class="floating-dot dot-3"></div>
+            <div class="floating-dot dot-4"></div>
+        </div>
+    </div>
+
+    <script>
+        // Add interactive hover effects and smooth animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Skill badges hover effect
+            const skillBadges = document.querySelectorAll('.skill-badge');
+            skillBadges.forEach((badge, index) => {
+                badge.style.animationDelay = `${1 + index * 0.1}s`;
+            });
+
+            // Button click effects
+            const primaryBtn = document.querySelector('.primary-btn');
+            primaryBtn.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1.05)';
+                }, 100);
+            });
+
+            // Social buttons click effects
+            const socialBtns = document.querySelectorAll('.social-btn');
+            socialBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.9)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1.1)';
+                    }, 100);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
